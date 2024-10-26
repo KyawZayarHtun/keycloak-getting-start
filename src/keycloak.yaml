@@ -1,0 +1,10 @@
+services:
+  keycloak:
+    container_name: keycloak-dev-mode
+    image: quay.io/keycloak/keycloak:26.0.2
+    ports:
+      - 8080:8080
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${kc_username}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${kc_password}
+    command: ["start-dev"]
